@@ -1,556 +1,835 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mammoth Education | Returning to the Essence of Education</title>
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Google Fonts: Playfair Display (Serif) & Inter (Sans) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            oxford: {
-              DEFAULT: '#0B192C',
-              light: '#1E3E62',
-              dark: '#050D1A',
-            },
-            gold: {
-              DEFAULT: '#C5A880',
-              light: '#E5D4BF',
-              dark: '#9A7B56',
-            },
-            parchment: '#FAF9F6',
-          },
-          fontFamily: {
-            serif: ['"Playfair Display"', 'Georgia', 'serif'],
-            sans: ['Inter', 'sans-serif'],
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mammoth Education | Elite Boutique Educational Consultancy</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0d1b2a',
+                            900: '#0a192f',
+                            950: '#050c18',
+                        },
+                        gold: {
+                            300: '#e2cfb3',
+                            400: '#d4af37',
+                            500: '#c5a880',
+                            600: '#a38458',
+                        },
+                        cream: '#FDFBF7'
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-  <style>
-    .gold-gradient-border {
-      border-image: linear-gradient(to right, #C5A880, rgba(197, 168, 128, 0.2)) 1;
-    }
-  </style>
+    </script>
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f3e5d8 0%, #c5a880 50%, #9a7b4f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-glow {
+            box-shadow: 0 0 15px rgba(197, 168, 128, 0.15);
+        }
+        .hero-bg {
+            background: linear-gradient(to right, rgba(10, 25, 47, 0.92), rgba(13, 27, 42, 0.85)), url('https://images.adsttc.com/media/images/5fd3/d3b4/63c0/1748/7600/0369/medium_jpg/SK_-B-tech_Towers_-_03.jpg') center/cover no-repeat;
+        }
+        .case-study-bg {
+            background: linear-gradient(to right, rgba(5, 12, 24, 0.95), rgba(10, 25, 47, 0.9)), url('https://static.vecteezy.com/system/resources/thumbnails/026/175/795/small/aerial-view-over-the-city-of-oxford-with-oxford-university-photo.jpg') center/cover no-repeat;
+        }
+    </style>
 </head>
-<body class="bg-[#FAF9F6] text-slate-800 font-sans antialiased selection:bg-gold-light selection:text-oxford">
+<body class="bg-cream text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-white">
 
-  <!-- TOP NAVIGATION -->
-  <nav class="fixed top-0 left-0 w-full z-50 bg-[#FAF9F6]/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <span class="font-serif text-2xl font-bold tracking-wider text-oxford uppercase">Mammoth</span>
-        <span class="text-xs uppercase tracking-widest text-gold-dark font-semibold border-l border-slate-300 pl-3">Education</span>
-      </div>
-      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
-        <a href="#origin" class="hover:text-oxford transition">Origin</a>
-        <a href="#why-us" class="hover:text-oxford transition">Why Mammoth</a>
-        <a href="#mentors" class="hover:text-oxford transition">Mentors</a>
-        <a href="#pathways" class="hover:text-oxford transition">Pathways</a>
-        <a href="#matrix" class="hover:text-oxford transition">UK & HK</a>
-        <a href="#strategy" class="hover:text-oxford transition">Persona Strategy</a>
-      </div>
-      <div>
-        <a href="#contact" class="inline-flex items-center px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-oxford text-white hover:bg-gold-dark transition-all duration-300 shadow-sm">
-          Book Consultation
-        </a>
-      </div>
+    <!-- Header & Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navy-900/90 backdrop-blur-md border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center text-navy-950 shadow-md group-hover:scale-105 transition-transform duration-300">
+                        <i class="fa-solid me-0 fa-monument text-xl"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-lg font-bold tracking-wider text-white group-hover:text-gold-400 transition-colors">MAMMOTH</span>
+                        <span class="text-[9px] font-medium tracking-[0.25em] text-gold-400 uppercase -mt-1">Education</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#origin" class="text-sm text-slate-300 hover:text-gold-400 font-medium transition-colors">Our Origin</a>
+                    <a href="#why-us" class="text-sm text-slate-300 hover:text-gold-400 font-medium transition-colors">Why Mammoth</a>
+                    <a href="#mentors" class="text-sm text-slate-300 hover:text-gold-400 font-medium transition-colors">Mentor Network</a>
+                    <a href="#pathways" class="text-sm text-slate-300 hover:text-gold-400 font-medium transition-colors">Strategic Pathways</a>
+                    <a href="#persona" class="text-sm text-slate-300 hover:text-gold-400 font-medium transition-colors">Persona Strategy</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden sm:flex items-center">
+                    <button onclick="openConsultationModal()" class="relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-navy-950 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 rounded-full shadow-lg hover:shadow-gold-500/20 hover:scale-105 active:scale-95 transition-all duration-300">
+                        <span>Book Consultation</span>
+                        <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-gold-400 focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-950 border-b border-gold-500/20 px-4 pt-2 pb-6 space-y-3">
+            <a href="#origin" class="mobile-link block py-2 text-base font-medium text-slate-300 hover:text-gold-400 border-b border-slate-800">Our Origin</a>
+            <a href="#why-us" class="mobile-link block py-2 text-base font-medium text-slate-300 hover:text-gold-400 border-b border-slate-800">Why Mammoth</a>
+            <a href="#mentors" class="mobile-link block py-2 text-base font-medium text-slate-300 hover:text-gold-400 border-b border-slate-800">Mentor Network</a>
+            <a href="#pathways" class="mobile-link block py-2 text-base font-medium text-slate-300 hover:text-gold-400 border-b border-slate-800">Strategic Pathways</a>
+            <a href="#persona" class="mobile-link block py-2 text-base font-medium text-slate-300 hover:text-gold-400 border-b border-slate-800">Persona Strategy</a>
+            <div class="pt-2">
+                <button onclick="openConsultationModal()" class="w-full text-center px-6 py-3 text-sm font-semibold text-navy-950 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 rounded-lg shadow-md">
+                    Book Consultation
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-16 hero-bg overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-navy-950/40 to-navy-950/90"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="max-w-3xl">
+                <!-- Tagline Badge -->
+                <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 backdrop-blur-md mb-6">
+                    <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+                    <span class="text-xs sm:text-sm font-semibold tracking-widest text-gold-300 uppercase">Boutique Educational Workshop</span>
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
+                    RETURNING TO THE <br/>
+                    <span class="gold-gradient-text">ESSENCE</span> OF EDUCATION
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-lg sm:text-xl text-slate-300 font-light leading-relaxed mb-10 max-w-2xl border-l-2 border-gold-500/50 pl-4">
+                    Blending Educational Research with Cultural Insights to Bridge the East-West Gap.
+                </p>
+
+                <!-- CTA Actions -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-5">
+                    <button onclick="openConsultationModal()" class="px-8 py-4 text-base font-semibold text-navy-950 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 rounded-full shadow-xl hover:shadow-gold-500/25 hover:scale-105 active:scale-95 transition-all text-center">
+                        Start Your Journey
+                    </button>
+                    <a href="#pathways" class="px-8 py-4 text-base font-medium text-white border border-gold-500/40 hover:bg-gold-500/10 rounded-full transition-all text-center backdrop-blur-sm">
+                        Explore Strategic Pathways
+                    </a>
+                </div>
+
+                <!-- Quick Stats Badges -->
+                <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 gap-6 pt-8 border-t border-slate-700/50">
+                    <div>
+                        <div class="font-serif text-3xl font-bold text-gold-400">1:1</div>
+                        <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Deep Mentorship Model</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-3xl font-bold text-gold-400">100%</div>
+                        <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Tailored Profile Roadmap</div>
+                    </div>
+                    <div>
+                        <div class="font-serif text-3xl font-bold text-gold-400">Top 1%</div>
+                        <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Ivy League & G5 Mentors</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Origin Story Section -->
+    <section id="origin" class="py-24 bg-cream relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Title Block -->
+                <div class="lg:col-span-5">
+                    <span class="text-gold-600 font-semibold uppercase tracking-widest text-xs">Our Philosophy</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2 mb-6">OUR ORIGIN STORY</h2>
+                    <div class="w-16 h-1 bg-gold-500 mb-6"></div>
+                    <p class="text-slate-600 leading-relaxed mb-6 font-light">
+                        Founded in 2021 by veterans of top-tier international education firms, Mammoth was born from a desire for a purer, more focused, and customized workshop.
+                    </p>
+                    <div class="p-6 bg-white rounded-2xl border border-gold-500/20 shadow-lg relative overflow-hidden">
+                        <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-gold-500/5 rounded-full blur-xl"></div>
+                        <i class="fa-solid fa-quote-left text-gold-400 text-2xl mb-3"></i>
+                        <p class="text-navy-900 font-serif italic text-lg leading-snug">
+                            "We move beyond the 'assembly line' model to truly see every unique student."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Narrative Cards -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-100 hover:border-gold-500/30 transition-all hover:shadow-xl group">
+                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Purer & Focused</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Steering clear of mass-production counseling. We maintain strict intake limits to deliver undivided attention and deep intellectual engagement for every family.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-100 hover:border-gold-500/30 transition-all hover:shadow-xl group sm:translate-y-6">
+                        <div class="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-navy-900 mb-3">Heartfelt Partnership</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Understanding students' anxieties and aspirations to provide the most professional, authentic companionship on their journey to world-class universities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Mammoth Education Section (6 Core Features Grid) -->
+    <section id="why-us" class="py-24 bg-navy-950 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-400 font-semibold uppercase tracking-widest text-xs">Unmatched Distinction</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 mb-4">WHY CHOOSE MAMMOTH EDUCATION?</h2>
+                <p class="text-slate-400 text-base font-light">Crafted for ambitious minds seeking holistic excellence and top-tier global admissions.</p>
+            </div>
+
+            <!-- 6 Grid Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-navy-900/80 p-8 rounded-2xl border border-gold-500/20 hover:border-gold-400/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gold-500/10 group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center text-xl group-hover:bg-gold-400 group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div>
+                        <span class="text-xs font-mono text-gold-500">01</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-gold-300 transition-colors">GROWTH-ORIENTED</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Focusing on long-term personal development alongside competitive application results.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-navy-900/80 p-8 rounded-2xl border border-gold-500/20 hover:border-gold-400/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gold-500/10 group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center text-xl group-hover:bg-gold-400 group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <span class="text-xs font-mono text-gold-500">02</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-gold-300 transition-colors">ELITE CONSULTANTS</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Team members from global top-tier universities with over 5–10 years of senior advising experience.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-navy-900/80 p-8 rounded-2xl border border-gold-500/20 hover:border-gold-400/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gold-500/10 group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center text-xl group-hover:bg-gold-400 group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-compass"></i>
+                        </div>
+                        <span class="text-xs font-mono text-gold-500">03</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-gold-300 transition-colors">ONE-STOP SERVICE</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        End-to-end solutions from early strategic planning to final enrollment and career path guidance.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-navy-900/80 p-8 rounded-2xl border border-gold-500/20 hover:border-gold-400/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gold-500/10 group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center text-xl group-hover:bg-gold-400 group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <span class="text-xs font-mono text-gold-500">04</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-gold-300 transition-colors">BESPOKE ACTIVITIES</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Deeply customized profile enhancement projects built around unique student passions and strengths.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-navy-900/80 p-8 rounded-2xl border border-gold-500/20 hover:border-gold-400/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gold-500/10 group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center text-xl group-hover:bg-gold-400 group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-users-between-lines"></i>
+                        </div>
+                        <span class="text-xs font-mono text-gold-500">05</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-gold-300 transition-colors">LOW STUDENT RATIO</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Ensuring high focus and intense mentorship depth for every student in our boutique workshop model.
+                    </p>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-navy-900/80 p-8 rounded-2xl border border-gold-500/20 hover:border-gold-400/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-gold-500/10 group">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center text-xl group-hover:bg-gold-400 group-hover:text-navy-950 transition-colors">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <span class="text-xs font-mono text-gold-500">06</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-white mb-3 group-hover:text-gold-300 transition-colors">ADMISSIONS INSIGHT</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Deep mastery of Ivy League and G5 selection logic backed by an expansive global alumni network.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentor Network Section (Tabs) -->
+    <section id="mentors" class="py-24 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-gold-600 font-semibold uppercase tracking-widest text-xs">World-Class Advisory</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-navy-900 mt-2 mb-4">OUR EXPERT MENTOR TEAMS</h2>
+                <p class="text-slate-600 text-base">Combining global academic scholarship with local strategic insights.</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex p-1.5 rounded-full bg-slate-200/80 border border-slate-300">
+                    <button id="tab-domestic-btn" onclick="switchMentorTab('domestic')" class="px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 bg-navy-900 text-white shadow-md">
+                        Domestic Expert Mentors
+                    </button>
+                    <button id="tab-international-btn" onclick="switchMentorTab('international')" class="px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 text-slate-700 hover:text-navy-900">
+                        International Mentor Network
+                    </button>
+                </div>
+            </div>
+
+            <!-- Domestic Mentor Grid -->
+            <div id="domestic-mentors" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Domestic 1 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-md hover:shadow-xl transition-all border-t-4 border-t-gold-500">
+                    <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-gold-600">Ivy Selection Specialists</span>
+                    <h3 class="font-serif text-2xl font-bold text-navy-900 mt-1 mb-3">SENIOR MENTORS</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Industry veterans focusing on Ivy League selections, political, and economic perspectives of elite US education.
+                    </p>
+                </div>
+
+                <!-- Domestic 2 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-md hover:shadow-xl transition-all border-t-4 border-t-gold-500">
+                    <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-gold-600">Cross-Cultural Strategy</span>
+                    <h3 class="font-serif text-2xl font-bold text-navy-900 mt-1 mb-3">SENIOR PLANNERS</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Alumni of top global universities (Melbourne, UWO) providing deep cross-cultural guidance and academic pathing.
+                    </p>
+                </div>
+
+                <!-- Domestic 3 -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-md hover:shadow-xl transition-all border-t-4 border-t-gold-500">
+                    <div class="w-12 h-12 rounded-full bg-gold-500/10 text-gold-600 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-gold-600">Narrative Crafting</span>
+                    <h3 class="font-serif text-2xl font-bold text-navy-900 mt-1 mb-3">WRITING SPECIALISTS</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Masters graduates from Johns Hopkins (JHU) and CUHK focusing on logic, infectious storytelling, and authentic student voice.
+                    </p>
+                </div>
+            </div>
+
+            <!-- International Mentor Grid (Hidden by default) -->
+            <div id="international-mentors" class="hidden grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- International 1 -->
+                <div class="bg-navy-900 text-white rounded-2xl p-8 border border-gold-500/30 shadow-md hover:shadow-xl transition-all">
+                    <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-gold-400">Ivy League Mentors</span>
+                    <h3 class="font-serif text-2xl font-bold text-white mt-1 mb-3">IVY LEAGUE SUPPORT</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Mentors from Cornell, Columbia, Brown, and Princeton providing specialized advice for STEM & Finance applicants.
+                    </p>
+                </div>
+
+                <!-- International 2 -->
+                <div class="bg-navy-900 text-white rounded-2xl p-8 border border-gold-500/30 shadow-md hover:shadow-xl transition-all">
+                    <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-gold-400">UK Elite Mentors</span>
+                    <h3 class="font-serif text-2xl font-bold text-white mt-1 mb-3">OXBRIDGE & G5</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Top scholars from Oxford, Cambridge, and UCL guiding students through rigorous interviews and entrance exams.
+                    </p>
+                </div>
+
+                <!-- International 3 -->
+                <div class="bg-navy-900 text-white rounded-2xl p-8 border border-gold-500/30 shadow-md hover:shadow-xl transition-all">
+                    <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-gold-400">Specialized Fields</span>
+                    <h3 class="font-serif text-2xl font-bold text-white mt-1 mb-3">MIT & YALE SPECIALISTS</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Cutting-edge research guidance for Bio-engineering, Computer Science, and Political Science from world-class researchers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Pathways Section -->
+    <section id="pathways" class="py-24 bg-slate-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-gold-400 font-semibold uppercase tracking-widest text-xs">Methodology</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 mb-4">STRATEGIC PATHWAYS</h2>
+                <p class="text-slate-400 text-base">Customized roadmaps tailored for US Undergrad, Oxbridge/G5, and Graduate Admissions.</p>
+            </div>
+
+            <!-- Pathway Selector Sub-tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-12 border-b border-slate-800 pb-4">
+                <button id="pathway-btn-1" onclick="switchPathway('us-undergrad')" class="px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-gold-500 text-navy-950 font-semibold shadow-lg">
+                    US Undergrad 4-Year Roadmap
+                </button>
+                <button id="pathway-btn-2" onclick="switchPathway('uk-hk')" class="px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-800">
+                    UK & Hong Kong Targets
+                </button>
+                <button id="pathway-btn-3" onclick="switchPathway('us-grad')" class="px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-800">
+                    US Graduate Admission Weights
+                </button>
+            </div>
+
+            <!-- Tab 1: US Undergrad Roadmap -->
+            <div id="pathway-us-undergrad" class="space-y-12">
+                <!-- Academic & Holistic Balance Card -->
+                <div class="bg-gradient-to-r from-navy-900 to-navy-800 p-8 rounded-2xl border border-gold-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="max-w-2xl">
+                        <span class="text-gold-400 font-semibold uppercase tracking-wider text-xs">Core Paradigm</span>
+                        <h3 class="font-serif text-2xl font-bold text-white mt-1 mb-2">Academic & Holistic Balance</h3>
+                        <p class="text-slate-300 text-sm">
+                            Dual consideration of <strong class="text-gold-300">Hard Power</strong> (GPA, TOEFL, SAT) and <strong class="text-gold-300">Soft Power</strong> (Leadership, Community Service, Competitions).
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs">GPA Monitoring</span>
+                        <span class="px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs">Cohesive Narrative</span>
+                        <span class="px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-300 text-xs">Scientific Positioning</span>
+                    </div>
+                </div>
+
+                <!-- 4-Year Timeline -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <!-- Grade 9 -->
+                    <div class="bg-navy-900 p-6 rounded-2xl border border-slate-800 hover:border-gold-500/40 transition-all relative">
+                        <div class="text-gold-400 font-serif font-bold text-3xl mb-2">9th Grade</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-4">Discovery Phase</div>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 text-xs mt-1 mr-2"></i>Vocabulary & reading foundation</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 text-xs mt-1 mr-2"></i>Extracurricular hobby exploration</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 text-xs mt-1 mr-2"></i>Initial high GPA management</li>
+                        </ul>
+                    </div>
+
+                    <!-- Grade 10 -->
+                    <div class="bg-navy-900 p-6 rounded-2xl border border-slate-800 hover:border-gold-500/40 transition-all relative">
+                        <div class="text-gold-400 font-serif font-bold text-3xl mb-2">10th Grade</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-4">Exploration Phase</div>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 text-xs mt-1 mr-2"></i>Intermediate standardized tests</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 text-xs mt-1 mr-2"></i>School club leadership roles</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 text-xs mt-1 mr-2"></i>Social impact & service projects</li>
+                        </ul>
+                    </div>
+
+                    <!-- Grade 11 -->
+                    <div class="bg-navy-900 p-6 rounded-2xl border border-slate-800 hover:border-gold-500/40 transition-all relative">
+                        <div class="text-gold-400 font-serif font-bold text-3xl mb-2">11th Grade</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-4">Intensification Phase</div>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 text-xs mt-1 mr-2"></i>High-level international competitions</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 text-xs mt-1 mr-2"></i>Top-tier summer school programs</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 text-xs mt-1 mr-2"></i>SAT / ACT score peak performance</li>
+                        </ul>
+                    </div>
+
+                    <!-- Grade 12 -->
+                    <div class="bg-navy-900 p-6 rounded-2xl border border-slate-800 hover:border-gold-500/40 transition-all relative">
+                        <div class="text-gold-400 font-serif font-bold text-3xl mb-2">12th Grade</div>
+                        <div class="text-xs uppercase tracking-widest text-slate-400 font-semibold mb-4">Submission Phase</div>
+                        <ul class="space-y-3 text-sm text-slate-300">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 text-xs mt-1 mr-2"></i>Personal essay & supplement workshops</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 text-xs mt-1 mr-2"></i>Alumni & faculty interview practice</li>
+                            <li class="flex items-start"><i class="fa-solid fa-check text-gold-400 text-xs mt-1 mr-2"></i>Final application execution & strategy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: UK & HK Comparison Matrix (Hidden by default) -->
+            <div id="pathway-uk-hk" class="hidden overflow-x-auto">
+                <table class="w-full text-left border-collapse bg-navy-900 rounded-2xl overflow-hidden shadow-xl text-sm">
+                    <thead>
+                        <tr class="bg-navy-950 border-b border-slate-800 text-gold-400 font-serif">
+                            <th class="p-4 sm:p-6">Subject Category</th>
+                            <th class="p-4 sm:p-6">UK Target (Oxbridge / IC)</th>
+                            <th class="p-4 sm:p-6">HK Target (HKU / CUHK)</th>
+                            <th class="p-4 sm:p-6">Selection Strategy</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 sm:p-6 font-semibold text-white">Mathematics / CS</td>
+                            <td class="p-4 sm:p-6">STEP / MAT Required</td>
+                            <td class="p-4 sm:p-6">IB 38+ / AP 6-Subject</td>
+                            <td class="p-4 sm:p-6">High-difficulty Olympiad competitions</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 sm:p-6 font-semibold text-white">Natural Sciences</td>
+                            <td class="p-4 sm:p-6">NSAA / PAT Tests</td>
+                            <td class="p-4 sm:p-6">High GPA + Olympiads</td>
+                            <td class="p-4 sm:p-6">Depth of lab research & academic writing</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 sm:p-6 font-semibold text-white">Business / Econ</td>
+                            <td class="p-4 sm:p-6">LNAT / TMUA Focus</td>
+                            <td class="p-4 sm:p-6">Interview & Multi-lingual</td>
+                            <td class="p-4 sm:p-6">Internships & Case Competitions</td>
+                        </tr>
+                        <tr class="hover:bg-slate-800/50 transition-colors">
+                            <td class="p-4 sm:p-6 font-semibold text-white">Medicine / Law</td>
+                            <td class="p-4 sm:p-6">UCAT / BMAT Hurdles</td>
+                            <td class="p-4 sm:p-6">Top 1% Class Rank</td>
+                            <td class="p-4 sm:p-6">Clinical & Legal Shadowing experience</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tab 3: US Graduate Admission Weights (Hidden by default) -->
+            <div id="pathway-us-grad" class="hidden space-y-8">
+                <div class="bg-navy-900 p-8 rounded-2xl border border-slate-800 max-w-4xl mx-auto">
+                    <h3 class="font-serif text-2xl font-bold text-white mb-6 text-center">US Graduate Admission Weighting Analysis</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Weight Item 1 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-2 font-medium">
+                                <span class="text-white">GPA & Academic Record</span>
+                                <span class="text-gold-400 font-bold">35%</span>
+                            </div>
+                            <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-gold-500 to-gold-300 w-[35%]"></div>
+                            </div>
+                        </div>
+
+                        <!-- Weight Item 2 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-2 font-medium">
+                                <span class="text-white">Research & Internships</span>
+                                <span class="text-gold-400 font-bold">30%</span>
+                            </div>
+                            <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-gold-500 to-gold-300 w-[30%]"></div>
+                            </div>
+                        </div>
+
+                        <!-- Weight Item 3 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-2 font-medium">
+                                <span class="text-white">Essays & Statement of Purpose (SOP)</span>
+                                <span class="text-gold-400 font-bold">20%</span>
+                            </div>
+                            <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-gold-500 to-gold-300 w-[20%]"></div>
+                            </div>
+                        </div>
+
+                        <!-- Weight Item 4 -->
+                        <div>
+                            <div class="flex justify-between text-sm mb-2 font-medium">
+                                <span class="text-white">Standardized Tests (GRE/GMAT) & LORs</span>
+                                <span class="text-gold-400 font-bold">15%</span>
+                            </div>
+                            <div class="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-gold-500 to-gold-300 w-[15%]"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Critical Key Insight Callout -->
+                    <div class="mt-8 p-4 bg-gold-500/10 border border-gold-500/30 rounded-xl flex items-start space-x-3">
+                        <i class="fa-solid fa-chart-line text-gold-400 text-lg mt-0.5"></i>
+                        <p class="text-sm text-slate-300">
+                            <strong class="text-gold-300">Analysis Key Insight:</strong> For Master's & PhD applicants, Practical Experience & Research output now rivals overall GPA in selection significance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Persona Strategy & Case Study Section -->
+    <section id="persona" class="py-24 case-study-bg text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Strategic Narrative -->
+                <div class="lg:col-span-5">
+                    <span class="text-gold-400 font-semibold uppercase tracking-widest text-xs">Differentiation Engine</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-bold mt-2 mb-6">THE "PERSONA" STRATEGY</h2>
+                    <p class="text-slate-300 leading-relaxed font-light mb-8 text-base">
+                        We move beyond generic resumes to create multidimensional human portraits. Admissions officers don't admit "data points"; they admit impactful, memorable people.
+                    </p>
+
+                    <div class="p-6 rounded-2xl bg-navy-900/90 border border-gold-500/30 shadow-2xl backdrop-blur-md">
+                        <div class="text-gold-400 font-serif text-2xl font-bold mb-2">Cambridge Offer Case Study</div>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            From a simple hobby to <strong class="text-gold-300">"The Environmental Influencer"</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Case Study Spotlight Card -->
+                <div class="lg:col-span-7">
+                    <div class="bg-gradient-to-br from-navy-900/95 to-navy-950/95 p-8 sm:p-10 rounded-3xl border border-gold-500/40 shadow-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-full blur-3xl"></div>
+
+                        <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800">
+                            <div>
+                                <span class="text-xs text-gold-400 uppercase font-semibold">Success Breakdown</span>
+                                <h3 class="font-serif text-2xl font-bold text-white">The Environmental Influencer</h3>
+                            </div>
+                            <span class="px-4 py-1.5 rounded-full bg-gold-500/20 text-gold-300 border border-gold-500/40 text-xs font-semibold">
+                                Cambridge Admitted
+                            </span>
+                        </div>
+
+                        <!-- 3-Pillar Integration -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                            <div class="p-4 bg-navy-950/80 rounded-xl border border-slate-800">
+                                <i class="fa-solid fa-camera text-gold-400 mb-2"></i>
+                                <h4 class="text-xs uppercase text-slate-400 font-medium">Pillar 01</h4>
+                                <p class="text-sm font-semibold text-white mt-1">Nature Photography</p>
+                            </div>
+
+                            <div class="p-4 bg-navy-950/80 rounded-xl border border-slate-800">
+                                <i class="fa-solid fa-share-nodes text-gold-400 mb-2"></i>
+                                <h4 class="text-xs uppercase text-slate-400 font-medium">Pillar 02</h4>
+                                <p class="text-sm font-semibold text-white mt-1">Social Media Advocacy</p>
+                            </div>
+
+                            <div class="p-4 bg-navy-950/80 rounded-xl border border-slate-800">
+                                <i class="fa-solid fa-leaf text-gold-400 mb-2"></i>
+                                <h4 class="text-xs uppercase text-slate-400 font-medium">Pillar 03</h4>
+                                <p class="text-sm font-semibold text-white mt-1">Botanical Research</p>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            By integrating these three distinct passions into a unified storytelling narrative and social initiative, we transformed a standard biology application into a compelling, impactful portrait of an environmental advocate.
+                        </p>
+
+                        <button onclick="openConsultationModal()" class="w-full py-3.5 rounded-xl font-semibold text-navy-950 bg-gradient-to-r from-gold-300 to-gold-500 hover:from-gold-400 hover:to-gold-600 transition-all text-center text-sm shadow-lg">
+                            Build Your Unique Persona
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Modal -->
+    <div id="consultation-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-navy-950/80 backdrop-blur-sm">
+        <div class="bg-navy-900 border border-gold-500/30 rounded-2xl max-w-lg w-full p-8 shadow-2xl relative text-white">
+            <button onclick="closeConsultationModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="font-serif text-2xl font-bold text-white mb-2">Book Your Consultation</h3>
+            <p class="text-slate-400 text-sm mb-6">Begin your bespoke application roadmap with a Mammoth senior consultant.</p>
+
+            <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs uppercase font-medium text-slate-300 mb-1">Student Name</label>
+                    <input type="text" required placeholder="Alex Smith" class="w-full px-4 py-2.5 rounded-xl bg-navy-950 border border-slate-800 focus:border-gold-400 focus:outline-none text-white text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase font-medium text-slate-300 mb-1">Contact Email / Phone</label>
+                    <input type="text" required placeholder="alex@example.com" class="w-full px-4 py-2.5 rounded-xl bg-navy-950 border border-slate-800 focus:border-gold-400 focus:outline-none text-white text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs uppercase font-medium text-slate-300 mb-1">Target Pathways</label>
+                    <select class="w-full px-4 py-2.5 rounded-xl bg-navy-950 border border-slate-800 focus:border-gold-400 focus:outline-none text-slate-300 text-sm">
+                        <option>US Undergraduate Admissions</option>
+                        <option>UK / Oxbridge Admissions</option>
+                        <option>Hong Kong Universities</option>
+                        <option>US Graduate School (Master / PhD)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs uppercase font-medium text-slate-300 mb-1">Current Grade / Year</label>
+                    <input type="text" placeholder="e.g. 10th Grade / Sophomore" class="w-full px-4 py-2.5 rounded-xl bg-navy-950 border border-slate-800 focus:border-gold-400 focus:outline-none text-white text-sm">
+                </div>
+                <button type="submit" class="w-full py-3 mt-2 rounded-xl font-semibold text-navy-950 bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 hover:scale-[1.02] active:scale-95 transition-all text-sm shadow-md">
+                    Submit Advisory Request
+                </button>
+            </form>
+            <div id="modal-success-msg" class="hidden mt-4 p-3 bg-emerald-500/20 border border-emerald-500/40 rounded-xl text-emerald-300 text-xs text-center">
+                Thank you! Our senior advising team will reach out within 24 hours.
+            </div>
+        </div>
     </div>
-  </nav>
 
-  <!-- 1. HERO & ORIGIN STORY -->
-  <section id="origin" class="pt-36 pb-20 lg:pt-44 lg:pb-32 px-6 overflow-hidden">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-      <div class="lg:col-span-7 space-y-6">
-        <div class="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-gold-dark bg-gold-light/20 px-3.5 py-1.5 rounded-full">
-          <i data-lucide="compass" class="w-3.5 h-3.5"></i>
-          <span>Our Origin Story • Founded in 2021</span>
-        </div>
-        <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-oxford font-normal leading-[1.15]">
-          Returning to the <br /><span class="italic font-medium text-gold-dark">Essence of Education</span>.
-        </h1>
-        <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-light">
-          Founded in 2021 by veterans of top-tier international education firms, Mammoth was born from a desire for a purer, more focused, and customized workshop.
-        </p>
-        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-          We move beyond the <strong>"assembly line"</strong> model to truly see every unique student, understanding their anxieties and aspirations to provide the most professional and heartfelt companionship on their journey to world-class universities.
-        </p>
-        
-        <div class="pt-4 grid grid-cols-3 gap-6 border-t border-slate-200">
-          <div>
-            <div class="font-serif text-3xl font-semibold text-oxford">2021</div>
-            <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Established</div>
-          </div>
-          <div>
-            <div class="font-serif text-3xl font-semibold text-oxford">100%</div>
-            <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Boutique Focus</div>
-          </div>
-          <div>
-            <div class="font-serif text-3xl font-semibold text-oxford">1 : 1</div>
-            <div class="text-xs text-slate-500 uppercase tracking-wider mt-1">Bespoke Design</div>
-          </div>
-        </div>
-      </div>
+    <!-- Footer -->
+    <footer class="bg-navy-950 text-slate-400 py-12 border-t border-slate-800/80 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-lg bg-gold-500 flex items-center justify-center text-navy-950">
+                        <i class="fa-solid fa-monument"></i>
+                    </div>
+                    <span class="font-serif text-white font-bold tracking-widest text-lg">MAMMOTH EDUCATION</span>
+                </div>
 
-      <div class="lg:col-span-5 relative">
-        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white">
-          <img 
-            src="https://static.vecteezy.com/system/resources/thumbnails/026/175/795/small/aerial-view-over-the-city-of-oxford-with-oxford-university-photo.jpg" 
-            alt="University of Oxford Campus"
-            class="w-full h-[460px] object-cover scale-105 hover:scale-100 transition-all duration-700"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-oxford/80 via-transparent to-transparent"></div>
-          <div class="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/90 backdrop-blur-md border border-white/50 text-oxford shadow-lg">
-            <p class="text-xs italic font-serif text-slate-700">
-              "Admissions officers don't admit data points; they admit impactful people."
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. WHY CHOOSE MAMMOTH (6-GRID BENTO) -->
-  <section id="why-us" class="py-24 bg-white border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-        <span class="text-xs uppercase font-bold tracking-widest text-gold-dark">Boutique Philosophy</span>
-        <h2 class="font-serif text-3xl sm:text-4xl text-oxford">Why Choose Mammoth Education?</h2>
-        <div class="w-12 h-0.5 bg-gold mx-auto mt-2"></div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- 1 -->
-        <div class="p-8 rounded-xl bg-[#FAF9F6] border border-slate-200/70 hover:border-gold transition duration-300 group">
-          <div class="w-12 h-12 rounded-lg bg-gold-light/20 flex items-center justify-center text-gold-dark mb-6 group-hover:bg-oxford group-hover:text-white transition">
-            <i data-lucide="heart-handshake" class="w-6 h-6"></i>
-          </div>
-          <h3 class="font-serif text-lg font-bold text-oxford uppercase tracking-wide">Growth-Oriented</h3>
-          <p class="text-sm text-slate-600 mt-2.5 leading-relaxed">
-            Focusing on long-term personal development alongside competitive application results.
-          </p>
-        </div>
-        <!-- 2 -->
-        <div class="p-8 rounded-xl bg-[#FAF9F6] border border-slate-200/70 hover:border-gold transition duration-300 group">
-          <div class="w-12 h-12 rounded-lg bg-gold-light/20 flex items-center justify-center text-gold-dark mb-6 group-hover:bg-oxford group-hover:text-white transition">
-            <i data-lucide="award" class="w-6 h-6"></i>
-          </div>
-          <h3 class="font-serif text-lg font-bold text-oxford uppercase tracking-wide">Elite Consultants</h3>
-          <p class="text-sm text-slate-600 mt-2.5 leading-relaxed">
-            Team members from global top-tier universities with over 5-10 years of mentoring experience.
-          </p>
-        </div>
-        <!-- 3 -->
-        <div class="p-8 rounded-xl bg-[#FAF9F6] border border-slate-200/70 hover:border-gold transition duration-300 group">
-          <div class="w-12 h-12 rounded-lg bg-gold-light/20 flex items-center justify-center text-gold-dark mb-6 group-hover:bg-oxford group-hover:text-white transition">
-            <i data-lucide="layers" class="w-6 h-6"></i>
-          </div>
-          <h3 class="font-serif text-lg font-bold text-oxford uppercase tracking-wide">One-Stop Service</h3>
-          <p class="text-sm text-slate-600 mt-2.5 leading-relaxed">
-            End-to-end solutions from early academic planning to final enrollment and long-term career guidance.
-          </p>
-        </div>
-        <!-- 4 -->
-        <div class="p-8 rounded-xl bg-[#FAF9F6] border border-slate-200/70 hover:border-gold transition duration-300 group">
-          <div class="w-12 h-12 rounded-lg bg-gold-light/20 flex items-center justify-center text-gold-dark mb-6 group-hover:bg-oxford group-hover:text-white transition">
-            <i data-lucide="sparkles" class="w-6 h-6"></i>
-          </div>
-          <h3 class="font-serif text-lg font-bold text-oxford uppercase tracking-wide">Bespoke Activities</h3>
-          <p class="text-sm text-slate-600 mt-2.5 leading-relaxed">
-            Deeply customized profile enhancement projects curated around unique student interests.
-          </p>
-        </div>
-        <!-- 5 -->
-        <div class="p-8 rounded-xl bg-[#FAF9F6] border border-slate-200/70 hover:border-gold transition duration-300 group">
-          <div class="w-12 h-12 rounded-lg bg-gold-light/20 flex items-center justify-center text-gold-dark mb-6 group-hover:bg-oxford group-hover:text-white transition">
-            <i data-lucide="users" class="w-6 h-6"></i>
-          </div>
-          <h3 class="font-serif text-lg font-bold text-oxford uppercase tracking-wide">Low Student Ratio</h3>
-          <p class="text-sm text-slate-600 mt-2.5 leading-relaxed">
-            Ensuring high focus and depth for every single student in our boutique workshop model.
-          </p>
-        </div>
-        <!-- 6 -->
-        <div class="p-8 rounded-xl bg-[#FAF9F6] border border-slate-200/70 hover:border-gold transition duration-300 group">
-          <div class="w-12 h-12 rounded-lg bg-gold-light/20 flex items-center justify-center text-gold-dark mb-6 group-hover:bg-oxford group-hover:text-white transition">
-            <i data-lucide="shield-check" class="w-6 h-6"></i>
-          </div>
-          <h3 class="font-serif text-lg font-bold text-oxford uppercase tracking-wide">Admissions Insight</h3>
-          <p class="text-sm text-slate-600 mt-2.5 leading-relaxed">
-            Deep mastery of Ivy League and G5 selection logic empowered by a global alumni intelligence network.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUOTE BANNER -->
-  <section class="py-16 bg-oxford text-white px-6">
-    <div class="max-w-4xl mx-auto text-center space-y-4">
-      <div class="text-gold-light text-2xl font-serif">“</div>
-      <p class="font-serif text-xl sm:text-2xl lg:text-3xl font-light italic leading-relaxed text-slate-100">
-        Blending Educational Research with Cultural Insights to Bridge the East-West Gap.
-      </p>
-      <div class="text-gold-light text-2xl font-serif">”</div>
-    </div>
-  </section>
-
-  <!-- 3. MENTOR TEAMS & GLOBAL NETWORK -->
-  <section id="mentors" class="py-24 px-6 max-w-7xl mx-auto">
-    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-      <span class="text-xs uppercase font-bold tracking-widest text-gold-dark">Our Faculty & Fellows</span>
-      <h2 class="font-serif text-3xl sm:text-4xl text-oxford">Dual Academic Mentor System</h2>
-      <p class="text-sm text-slate-600">Domestic expert planners combined with an international Ivy & Oxbridge network.</p>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <!-- Domestic Expert Mentor Team -->
-      <div class="space-y-6">
-        <div class="border-b-2 border-oxford pb-3">
-          <h3 class="font-serif text-2xl text-oxford font-semibold">Domestic Expert Mentor Team</h3>
-          <p class="text-xs uppercase tracking-wider text-slate-500 mt-1">Strategic Planning & Narrative Execution</p>
-        </div>
-
-        <div class="space-y-4">
-          <div class="p-6 rounded-xl bg-white border border-slate-200 hover:shadow-md transition">
-            <div class="flex items-center space-x-3 mb-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-gold"></span>
-              <h4 class="font-bold text-oxford tracking-wide uppercase text-sm">Senior Mentors</h4>
+                <div class="flex flex-wrap gap-6 text-xs text-slate-400">
+                    <a href="#origin" class="hover:text-gold-400 transition-colors">Our Origin</a>
+                    <a href="#why-us" class="hover:text-gold-400 transition-colors">Why Choose Us</a>
+                    <a href="#mentors" class="hover:text-gold-400 transition-colors">Mentor Network</a>
+                    <a href="#pathways" class="hover:text-gold-400 transition-colors">Pathways</a>
+                </div>
             </div>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Experts focusing on Ivy League selections and political/economic perspectives of US elite education.
-            </p>
-          </div>
 
-          <div class="p-6 rounded-xl bg-white border border-slate-200 hover:shadow-md transition">
-            <div class="flex items-center space-x-3 mb-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-gold"></span>
-              <h4 class="font-bold text-oxford tracking-wide uppercase text-sm">Senior Planners</h4>
+            <!-- Credits & Legal -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Mammoth Education. All rights reserved.</p>
+                <div class="text-center sm:text-right">
+                    <span>Image Sources & Credits: ArchDaily, Vecteezy, RIT</span>
+                </div>
             </div>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Alumni of top global schools (Melbourne, UWO) with deep cross-cultural guidance expertise.
-            </p>
-          </div>
-
-          <div class="p-6 rounded-xl bg-white border border-slate-200 hover:shadow-md transition">
-            <div class="flex items-center space-x-3 mb-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-gold"></span>
-              <h4 class="font-bold text-oxford tracking-wide uppercase text-sm">Writing Specialists</h4>
-            </div>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Masters from JHU and CUHK focusing on logic, infectious storytelling, and authentic voice.
-            </p>
-          </div>
         </div>
-      </div>
+    </footer>
 
-      <!-- International Mentor Network -->
-      <div class="space-y-6">
-        <div class="border-b-2 border-gold-dark pb-3">
-          <h3 class="font-serif text-2xl text-oxford font-semibold">International Mentor Network</h3>
-          <p class="text-xs uppercase tracking-wider text-slate-500 mt-1">Disciplinary Scholars & Global Alumni</p>
-        </div>
+    <!-- Interactive Logic Script -->
+    <script>
+        // Mobile menu toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        <div class="space-y-4">
-          <div class="p-6 rounded-xl bg-white border border-slate-200 hover:shadow-md transition">
-            <div class="flex items-center space-x-3 mb-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-oxford"></span>
-              <h4 class="font-bold text-oxford tracking-wide uppercase text-sm">Ivy League Support</h4>
-            </div>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Mentors from Cornell, Columbia, Brown, and Princeton providing STEM and Finance domain expertise.
-            </p>
-          </div>
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-          <div class="p-6 rounded-xl bg-white border border-slate-200 hover:shadow-md transition">
-            <div class="flex items-center space-x-3 mb-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-oxford"></span>
-              <h4 class="font-bold text-oxford tracking-wide uppercase text-sm">Oxbridge & G5</h4>
-            </div>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Top scholars from Oxford, Cambridge, and UCL guiding students through the rigorous G5 interview process.
-            </p>
-          </div>
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
 
-          <div class="p-6 rounded-xl bg-white border border-slate-200 hover:shadow-md transition">
-            <div class="flex items-center space-x-3 mb-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-oxford"></span>
-              <h4 class="font-bold text-oxford tracking-wide uppercase text-sm">MIT & Yale Specialists</h4>
-            </div>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Specialized guidance for Bio-engineering, CS, and Political Science from the world's highest research institutions.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        // Mentor Network Tab Switcher
+        function switchMentorTab(type) {
+            const domTab = document.getElementById('domestic-mentors');
+            const intTab = document.getElementById('international-mentors');
+            const domBtn = document.getElementById('tab-domestic-btn');
+            const intBtn = document.getElementById('tab-international-btn');
 
-  <!-- 4. US UNDERGRADUATE PATHWAY & 4-YEAR ROADMAP -->
-  <section id="pathways" class="py-24 bg-white border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-3xl mb-16">
-        <span class="text-xs uppercase font-bold tracking-widest text-gold-dark">Undergraduate Framework</span>
-        <h2 class="font-serif text-3xl sm:text-4xl text-oxford mt-1">The US Undergraduate Pathway</h2>
-        <p class="text-base text-slate-600 mt-3 leading-relaxed">
-          <strong>Academic & Holistic Balance:</strong> We believe in the dual consideration of <em>Hard Power</em> (GPA, TOEFL, SAT) and <em>Soft Power</em> (Leadership, Community Service, Competitions).
-        </p>
-      </div>
+            if (type === 'domestic') {
+                domTab.classList.remove('hidden');
+                intTab.classList.add('hidden');
+                domBtn.className = "px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 bg-navy-900 text-white shadow-md";
+                intBtn.className = "px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 text-slate-700 hover:text-navy-900";
+            } else {
+                domTab.classList.add('hidden');
+                intTab.classList.remove('hidden');
+                intBtn.className = "px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 bg-navy-900 text-white shadow-md";
+                domBtn.className = "px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 text-slate-700 hover:text-navy-900";
+            }
+        }
 
-      <!-- 3 Pillars -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
-        <div class="p-6 rounded-xl bg-[#FAF9F6] border border-slate-200">
-          <div class="font-bold text-oxford text-sm uppercase tracking-wider mb-2">GPA Management</div>
-          <p class="text-xs text-slate-600 leading-relaxed">Continuous monitoring and curriculum optimization for academic rigor.</p>
-        </div>
-        <div class="p-6 rounded-xl bg-[#FAF9F6] border border-slate-200">
-          <div class="font-bold text-oxford text-sm uppercase tracking-wider mb-2">Activity Exploration</div>
-          <p class="text-xs text-slate-600 leading-relaxed">Identifying genuine student interests to construct a cohesive, authentic personal narrative.</p>
-        </div>
-        <div class="p-6 rounded-xl bg-[#FAF9F6] border border-slate-200">
-          <div class="font-bold text-oxford text-sm uppercase tracking-wider mb-2">Strategic Positioning</div>
-          <p class="text-xs text-slate-600 leading-relaxed">Scientific school selection based on historical admissions data and profile fit.</p>
-        </div>
-      </div>
+        // Strategic Pathways Tab Switcher
+        function switchPathway(path) {
+            const usUndergrad = document.getElementById('pathway-us-undergrad');
+            const ukHk = document.getElementById('pathway-uk-hk');
+            const usGrad = document.getElementById('pathway-us-grad');
 
-      <!-- 4-Year Strategic Roadmap -->
-      <div>
-        <h3 class="font-serif text-2xl text-oxford font-semibold text-center mb-12">The 4-Year Strategic Roadmap</h3>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-          <!-- Step 1 -->
-          <div class="p-6 rounded-xl bg-white border-t-4 border-gold shadow-sm flex flex-col justify-between">
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-gold-dark">Grade 09</span>
-              <h4 class="font-serif text-lg font-bold text-oxford mt-1">Discovery</h4>
-              <p class="text-xs text-slate-600 mt-3 leading-relaxed">
-                Vocabulary building, hobby exploration, and initial rigorous GPA management.
-              </p>
-            </div>
-            <div class="mt-6 text-[10px] text-slate-400 uppercase tracking-widest">Phase 01</div>
-          </div>
-          <!-- Step 2 -->
-          <div class="p-6 rounded-xl bg-white border-t-4 border-gold shadow-sm flex flex-col justify-between">
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-gold-dark">Grade 10</span>
-              <h4 class="font-serif text-lg font-bold text-oxford mt-1">Exploration</h4>
-              <p class="text-xs text-slate-600 mt-3 leading-relaxed">
-                Intermediate tests, school clubs involvement, and high-impact social projects.
-              </p>
-            </div>
-            <div class="mt-6 text-[10px] text-slate-400 uppercase tracking-widest">Phase 02</div>
-          </div>
-          <!-- Step 3 -->
-          <div class="p-6 rounded-xl bg-white border-t-4 border-oxford shadow-sm flex flex-col justify-between">
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-oxford">Grade 11</span>
-              <h4 class="font-serif text-lg font-bold text-oxford mt-1">Intensification</h4>
-              <p class="text-xs text-slate-600 mt-3 leading-relaxed">
-                High-level Olympiads & competitions, prestigious summer schools, and SAT/ACT peaks.
-              </p>
-            </div>
-            <div class="mt-6 text-[10px] text-slate-400 uppercase tracking-widest">Phase 03</div>
-          </div>
-          <!-- Step 4 -->
-          <div class="p-6 rounded-xl bg-white border-t-4 border-oxford shadow-sm flex flex-col justify-between">
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-oxford">Grade 12</span>
-              <h4 class="font-serif text-lg font-bold text-oxford mt-1">Submission</h4>
-              <p class="text-xs text-slate-600 mt-3 leading-relaxed">
-                Essay workshops, intense interview simulations, and precision application execution.
-              </p>
-            </div>
-            <div class="mt-6 text-[10px] text-slate-400 uppercase tracking-widest">Phase 04</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+            const btn1 = document.getElementById('pathway-btn-1');
+            const btn2 = document.getElementById('pathway-btn-2');
+            const btn3 = document.getElementById('pathway-btn-3');
 
-  <!-- 5. STRATEGIC PATHWAYS: UK & HONG KONG (TABLE) -->
-  <section id="matrix" class="py-24 px-6 max-w-7xl mx-auto">
-    <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-      <span class="text-xs uppercase font-bold tracking-widest text-gold-dark">Curriculum Specialization</span>
-      <h2 class="font-serif text-3xl sm:text-4xl text-oxford">Strategic Pathways: UK & Hong Kong</h2>
-      <p class="text-sm text-slate-600">Cross-comparison matrix for competitive STEM, Humanities, and Professional tracks.</p>
-    </div>
+            // Hide all
+            usUndergrad.classList.add('hidden');
+            ukHk.classList.add('hidden');
+            usGrad.classList.add('hidden');
 
-    <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm bg-white">
-      <table class="w-full text-left border-collapse">
-        <thead>
-          <tr class="bg-oxford text-white text-xs uppercase tracking-wider font-semibold">
-            <th class="py-4 px-6">Subject Category</th>
-            <th class="py-4 px-6">UK Target (Oxbridge/IC)</th>
-            <th class="py-4 px-6">HK Target (HKU/CUHK)</th>
-            <th class="py-4 px-6">Selection Strategy</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-slate-100 text-sm text-slate-700">
-          <tr class="hover:bg-slate-50 transition">
-            <td class="py-4 px-6 font-semibold text-oxford">Mathematics / CS</td>
-            <td class="py-4 px-6">STEP / MAT Required</td>
-            <td class="py-4 px-6">IB 38+ / AP 6-Subject</td>
-            <td class="py-4 px-6 text-slate-500">High-difficulty competitions & Olympiad focus</td>
-          </tr>
-          <tr class="hover:bg-slate-50 transition">
-            <td class="py-4 px-6 font-semibold text-oxford">Natural Sciences</td>
-            <td class="py-4 px-6">NSAA / PAT Tests</td>
-            <td class="py-4 px-6">High GPA + Olympiads</td>
-            <td class="py-4 px-6 text-slate-500">Depth of substantive laboratory research</td>
-          </tr>
-          <tr class="hover:bg-slate-50 transition">
-            <td class="py-4 px-6 font-semibold text-oxford">Business / Econ</td>
-            <td class="py-4 px-6">LNAT / TMUA Focus</td>
-            <td class="py-4 px-6">Interview & Multi-lingual</td>
-            <td class="py-4 px-6 text-slate-500">Internships, Case Competitions & Leadership</td>
-          </tr>
-          <tr class="hover:bg-slate-50 transition">
-            <td class="py-4 px-6 font-semibold text-oxford">Medicine / Law</td>
-            <td class="py-4 px-6">UCAT / BMAT Hurdles</td>
-            <td class="py-4 px-6">Top 1% Class Rank</td>
-            <td class="py-4 px-6 text-slate-500">Clinical / Legal shadows & ethical assessments</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+            // Reset buttons
+            [btn1, btn2, btn3].forEach(btn => {
+                btn.className = "px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 text-slate-400 hover:text-white hover:bg-slate-800";
+            });
 
-  <!-- 6. US GRADUATE WEIGHTS & THE "PERSONA" STRATEGY -->
-  <section id="strategy" class="py-24 bg-white border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        
-        <!-- Left: Graduate Weights -->
-        <div class="lg:col-span-6 space-y-6">
-          <div>
-            <span class="text-xs uppercase font-bold tracking-widest text-gold-dark">Postgraduate Admissions</span>
-            <h2 class="font-serif text-3xl text-oxford mt-1">US Graduate Admission Weights</h2>
-          </div>
+            // Show selected
+            if (path === 'us-undergrad') {
+                usUndergrad.classList.remove('hidden');
+                btn1.className = "px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-gold-500 text-navy-950 font-semibold shadow-lg";
+            } else if (path === 'uk-hk') {
+                ukHk.classList.remove('hidden');
+                btn2.className = "px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-gold-500 text-navy-950 font-semibold shadow-lg";
+            } else if (path === 'us-grad') {
+                usGrad.classList.remove('hidden');
+                btn3.className = "px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 bg-gold-500 text-navy-950 font-semibold shadow-lg";
+            }
+        }
 
-          <div class="space-y-4 pt-2">
-            <!-- Item 1 -->
-            <div>
-              <div class="flex justify-between text-xs font-semibold text-oxford uppercase tracking-wider mb-1">
-                <span>GPA & Academic Record</span>
-                <span class="text-gold-dark font-bold">35%</span>
-              </div>
-              <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
-                <div class="bg-oxford h-full rounded-full" style="width: 35%"></div>
-              </div>
-            </div>
-            <!-- Item 2 -->
-            <div>
-              <div class="flex justify-between text-xs font-semibold text-oxford uppercase tracking-wider mb-1">
-                <span>Research & Internships</span>
-                <span class="text-gold-dark font-bold">30%</span>
-              </div>
-              <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
-                <div class="bg-oxford h-full rounded-full" style="width: 30%"></div>
-              </div>
-            </div>
-            <!-- Item 3 -->
-            <div>
-              <div class="flex justify-between text-xs font-semibold text-oxford uppercase tracking-wider mb-1">
-                <span>Essays & SOP</span>
-                <span class="text-gold-dark font-bold">20%</span>
-              </div>
-              <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
-                <div class="bg-gold h-full rounded-full" style="width: 20%"></div>
-              </div>
-            </div>
-            <!-- Item 4 -->
-            <div>
-              <div class="flex justify-between text-xs font-semibold text-oxford uppercase tracking-wider mb-1">
-                <span>Standardized Tests & LORs</span>
-                <span class="text-gold-dark font-bold">15%</span>
-              </div>
-              <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
-                <div class="bg-slate-400 h-full rounded-full" style="width: 15%"></div>
-              </div>
-            </div>
-          </div>
+        // Modal Controls
+        function openConsultationModal() {
+            document.getElementById('consultation-modal').classList.remove('hidden');
+        }
 
-          <div class="p-4 rounded-lg bg-gold-light/10 border-l-4 border-gold text-xs text-slate-700 leading-relaxed">
-            <strong>Admissions Analysis:</strong> For Master's & PhD applicants, Practical Research Experience now rivals GPA in selection significance.
-          </div>
-        </div>
+        function closeConsultationModal() {
+            document.getElementById('consultation-modal').classList.add('hidden');
+            document.getElementById('modal-success-msg').classList.add('hidden');
+        }
 
-        <!-- Right: The "Persona" Strategy & Case Study -->
-        <div class="lg:col-span-6 bg-[#FAF9F6] p-8 lg:p-10 rounded-2xl border border-slate-200">
-          <span class="text-xs uppercase font-bold tracking-widest text-gold-dark">Crafting Distinctiveness</span>
-          <h3 class="font-serif text-2xl text-oxford mt-1">The "Persona" Strategy</h3>
-          
-          <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-            We move beyond generic resumes to create multidimensional human portraits. Admissions officers don't admit "data points"; they admit impactful people.
-          </p>
-
-          <!-- Case Card -->
-          <div class="mt-6 p-6 rounded-xl bg-white border border-slate-200 shadow-sm space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 bg-green-50 text-green-700 rounded-md">
-                Case Study • Cambridge Offer
-              </span>
-              <span class="text-xs text-slate-400">Class of 2024</span>
-            </div>
-            <h4 class="font-serif text-lg font-semibold text-oxford">From a Simple Hobby to "The Environmental Influencer"</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              By seamlessly integrating <strong>wildlife photography</strong>, <strong>social media advocacy</strong>, and <strong>rigorous botanical research</strong>, we positioned a unique candidate who secured a direct offer from the University of Cambridge.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. FOOTER & ACADEMIC CREDITS -->
-  <footer id="contact" class="bg-oxford text-white pt-20 pb-12 px-6">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-slate-800">
-      
-      <div class="md:col-span-6 space-y-4">
-        <div class="font-serif text-2xl font-bold tracking-widest">MAMMOTH EDUCATION</div>
-        <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
-          Founded in 2021. Dedicated to a purer, customized educational advisory workshop for world-class universities.
-        </p>
-        <div class="text-xs text-gold-light">
-          Boutique Consulting • US Top 30 • Oxbridge & G5 • HK Top 3
-        </div>
-      </div>
-
-      <div class="md:col-span-6 space-y-3 md:text-right">
-        <h4 class="text-xs uppercase tracking-widest text-slate-400 font-bold">Start Your Journey</h4>
-        <p class="text-sm text-slate-200 font-serif">Reach out to our senior mentor council for an initial holistic profile review.</p>
-        <div class="pt-2">
-          <a href="mailto:admissions@mammoth-edu.com" class="inline-block px-6 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-gold text-oxford hover:bg-gold-light transition shadow-sm">
-            Schedule Profile Evaluation
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- PPT Image Sources & Attribution -->
-    <div class="max-w-7xl mx-auto pt-8 flex flex-col md:flex-row items-center justify-between text-[11px] text-slate-500 space-y-4 md:space-y-0">
-      <div>© 2021–2026 Mammoth Education. All rights reserved.</div>
-      <div class="flex space-x-4">
-        <span>Image Sources: ArchDaily, Vecteezy, RIT Laboratory Sciences</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Lucide Icon Initialization -->
-  <script>
-    lucide.createIcons();
-  </script>
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('modal-success-msg').classList.remove('hidden');
+            setTimeout(() => {
+                closeConsultationModal();
+            }, 2500);
+        }
+    </script>
 </body>
 </html>
